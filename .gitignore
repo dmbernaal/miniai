@@ -1,0 +1,9 @@
+# data
+data
+
+# notebook checkpoints
+**/*.ipynb_checkpoints
+
+# caches
+**/__pycache__/
+
