@@ -13,6 +13,9 @@ def extract_names(code):
         elif isinstance(node, ast.FunctionDef) and not class_present:
             if not node.name.startswith('_'):
                 names.append(node.name)
+        elif isinstance(node, ast.Assign):
+            if isinstance(node.targets[0], ast.Name):
+                names.append(node.targets[0].id)
     return names
 
 def format_cells(notebook_file, export_token="#export"):
